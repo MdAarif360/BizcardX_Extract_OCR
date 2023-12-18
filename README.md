@@ -18,7 +18,7 @@ management system like SQLite or MySQL or PostgreSQL.
 # Libraries
 ### Libraries/Modules needed for the project!
 - Streamlit - (To Create Graphical user Interface)
-- Psycopg2 - (To Create local database and interact with data)
+- MySQL - (To Create local database and interact with data)
 - Json - (To read the data or Json files and convert Json format)
 - PIL - (To Insert and Use Image)
 - Easyocr - (To Create and Understand data in computer vision)(Optical Character Recognition)
@@ -31,13 +31,12 @@ management system like SQLite or MySQL or PostgreSQL.
 ### what i did for project solution:
 ## workflow:
 #### Step 1 :
-- Python environment (Python 3.x recommended) Streamlit, Pandas, easyOCR, PIL, cv2, matplotlib, re, Psycopg2 libraries installed postgresql server setup and running Features **Home**: Displays an overview of the app including technologies used and a brief description of the app. 
+- Python environment (Python 3.x recommended) Streamlit, Pandas, easyOCR, PIL, cv2, matplotlib, re, MySQL libraries installed postgresql server setup and running Features **Home**: Displays an overview of the app including technologies used and a brief description of the app. 
 #### Step 2 :
 - **Upload & Extract**: This section allows the user to upload an image of a business card. The application then processes the image and extracts data such as company name, card holder name, designation, mobile number, email, website, area, city, state, pin code, and the image of the card.
 #### Step 3 : 
 - **Modify**: This section allows users to select an entry from the database using a dropdown menu, which they can then update or **delete**. Note: Ensure your PostgreSQL server is running and the database details in the script match your PostgreSQL setup.
-#### Step 4 : 
-- **About** :This section allows users to knows as the project description and workflows.
+
 ## Importing required libraries
 ### Import Data Handling libraries
 ```python
@@ -129,9 +128,9 @@ cont.commit()
 ```
 # E D A Process 
 
-## a) Access PostgreSQL DB to Modify 
+## a) Access MySQL DB to Modify 
 
-* Create a connection to the postgreSQL server and access the specified postgreSQL DataBase by using **psycopg2** library
+* Create a connection to the MySQL server and access the specified postgreSQL DataBase by using **mysql.connector** library
 ```python
 selection = st.selectbox("Select specific column to update", column_names)
 new_data = st.text_input(f"Enter the new {selection}")
@@ -165,15 +164,12 @@ if st.button('DELETE'):
 
 ## Outputs and Streamlit UI
 - ### Home - page:
-![Outlook](https://github.com/mohamedbasith30122001/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/bizcard_project_github/output_pages/biz_home.png)
+![Outlook](https://github.com/MdAarif360/BizcardX_Extract_OCR/blob/main/bizcard_project_github/output_pages/biz_home.png)
 - ### Upload - page:
-![Outlook](https://github.com/mohamedbasith30122001/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/bizcard_project_github/output_pages/biz_upload_extract.png)
+![Outlook](https://github.com/MdAarif360/BizcardX_Extract_OCR/blob/main/bizcard_project_github/output_pages/biz_upload_extract.png)
 - ### Modify - page:
-![Outlook](https://github.com/mohamedbasith30122001/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/bizcard_project_github/output_pages/biz_modify.png)
-- ### Delete - page:
-  ![Outlook](https://github.com/mohamedbasith30122001/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/bizcard_project_github/output_pages/biz_delete.png)
- - ### About - page:
-![Outlook](https://github.com/mohamedbasith30122001/BizCardX-Extracting-Business-Card-Data-with-OCR/blob/main/bizcard_project_github/output_pages/biz_about.png)
+![Outlook](https://github.com/MdAarif360/BizcardX_Extract_OCR/blob/main/bizcard_project_github/output_pages/biz_modify.png)
+
 
 
     
