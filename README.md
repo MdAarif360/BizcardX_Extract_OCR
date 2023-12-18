@@ -7,13 +7,13 @@
 - [Problem_solution](#Problem_solution)
 - [Conclusion](#Conclusion)
 # Introduction:
-- BizCardX: Extracting Business Card Data with OCR Overview BizCardX is a Streamlit web application which extracts data from business cards using Optical Character Recognition (OCR). Users can upload an image of a business card and the application uses the easyOCR library to extract relevant information from the card. The extracted information is then displayed in a user-friendly format and can be stored in a PostgreSql database for future reference.
+- BizCardX: Extracting Business Card Data with OCR Overview BizCardX is a Streamlit web application which extracts data from business cards using Optical Character Recognition (OCR). Users can upload an image of a business card and the application uses the easyOCR library to extract relevant information from the card. The extracted information is then displayed in a user-friendly format and can be stored in a MySQL database for future reference.
 # Problem_statement:
 - developing a Streamlit application that allows users to upload an image of a business card and extract relevant information from it using
 easyOCR. The extracted information should include the company name, card holdername, designation, mobile number, email address, website URL, area, city, state,and pin code. The extracted information should then be displayed in the application's graphical user interface (GUI).
 In addition, the application should allow users to save the extracted information intoa database along with the uploaded business card image. The database should be able to store multiple entries, each with its own business card image and extracted information.
 - Techonlgies used:Python, Streamlit, easyOCR, and a database
-management system like SQLite or MySQL or PostgreSQL.
+management system like SQLite or MySQL or postgresql.
 - The application should have a simple and intuitive user interface that guides users through the process of uploading the business card image and extracting its information. The extracted information should be displayed in a clean and organized manner, and users should be able to easily add it to the database with the click of a button. And Allow the user to Read the data,Update the data and Allow the user to delete the data through the streamlit UI
 # Libraries
 ### Libraries/Modules needed for the project!
@@ -28,14 +28,14 @@ management system like SQLite or MySQL or PostgreSQL.
 - Numpy - (To use array and statistical value)
 - Time - (To use Time)
 # Problem_solution:
-### what i did for project solution:
+### How to achieve project solution:
 ## workflow:
 #### Step 1 :
-- Python environment (Python 3.x recommended) Streamlit, Pandas, easyOCR, PIL, cv2, matplotlib, re, MySQL libraries installed postgresql server setup and running Features **Home**: Displays an overview of the app including technologies used and a brief description of the app. 
+- Python environment (Python 3.x recommended) Streamlit, Pandas, easyOCR, PIL, cv2, matplotlib, re, MySQL libraries installed MySQL server setup and running Features **Home**: Displays an overview of the app including technologies used and a brief description of the app. 
 #### Step 2 :
 - **Upload & Extract**: This section allows the user to upload an image of a business card. The application then processes the image and extracts data such as company name, card holder name, designation, mobile number, email, website, area, city, state, pin code, and the image of the card.
 #### Step 3 : 
-- **Modify**: This section allows users to select an entry from the database using a dropdown menu, which they can then update or **delete**. Note: Ensure your PostgreSQL server is running and the database details in the script match your PostgreSQL setup.
+- **Modify**: This section allows users to select an entry from the database using a dropdown menu, which they can then update or **delete**. Note: Ensure your MySQL server is running and the database details in the script match your MySQL setup.
 
 ## Importing required libraries
 ### Import Data Handling libraries
@@ -93,12 +93,12 @@ for web in url:
 ```
 - Extract the other data using like this code
 ## c) Load  data
-### Create Table and Insert into Postgresql
-- After insert the dataframe into sql  inner server by using postgresql
+### Create Table and Insert into MySQL
+- After insert the dataframe into sql  inner server by using MySQL
 - To Establish the connection with sql server
 - below table to reference another tables 
 ```python
-#postgresql connect
+#MySQL connect
 mydb = sql.connect("Enter the connection String")
 csr = mydb.cursor(buffered=True)
 ```
@@ -130,7 +130,7 @@ cont.commit()
 
 ## a) Access MySQL DB to Modify 
 
-* Create a connection to the MySQL server and access the specified postgreSQL DataBase by using **mysql.connector** library
+* Create a connection to the MySQL server and access the specified MySQL DataBase by using **mysql.connector** library
 ```python
 selection = st.selectbox("Select specific column to update", column_names)
 new_data = st.text_input(f"Enter the new {selection}")
