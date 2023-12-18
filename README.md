@@ -99,8 +99,8 @@ for web in url:
 - below table to reference another tables 
 ```python
 #postgresql connect
-cont=psycopg2.connect(host='localhost',user='postgres',password='basith',port=5432,database='basith')
-csr=cont.cursor()
+mydb = sql.connect("Enter the connection String")
+csr = mydb.cursor(buffered=True)
 ```
 ```python
 #create tables
